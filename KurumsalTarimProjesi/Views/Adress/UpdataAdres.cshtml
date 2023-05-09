@@ -1,0 +1,41 @@
+﻿@model EntityLayer.Concrete.Adress
+@{
+    ViewData["Title"] = "UpdataAdres";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Resim Ekleme</h4>
+            <form class="forms-sample" method="post">
+                @Html.HiddenFor(x => x.AddressID)
+                <div class="form-group">
+                    <label for="exampleInputName1">Açıklama 1</label>
+                    <span asp-validation-for="Description1" class="text text-danger"></span>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Lütfen Açıklama Giriniz" asp-for="Description1" />
+                    <br />
+                    <label for="exampleInputName1">Açıklama 2</label>
+                    <span asp-validation-for="Description2" class="text text-danger"></span>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Lütfen Açıklama Giriniz" asp-for="Description2" />
+                    <br />
+                    <label for="exampleInputName1">Açıklama 3</label>
+                    <span asp-validation-for="Description3" class="text text-danger"></span>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Lütfen Açıklama Giriniz" asp-for="Description3" />
+                    <br />
+                    <label for="exampleInputName1">Açıklama 4</label>
+                    <span asp-validation-for="Description4" class="text text-danger"></span>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Lütfen Açıklama Giriniz" asp-for="Description4" />
+                    <br />
+                    <label for="exampleInputName1">Harita Bilgisi</label>
+                    <span asp-validation-for="Mapİnfo" class="text text-danger"></span>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Lütfen Map Bilgisi Giriniz" asp-for="Mapİnfo" />
+                    <br />
+                </div>
+                <button type="submit" class="btn btn-outline-primary">Kaydet</button>
+                <button class="btn btn-light">Geri Dön</button>
+            </form>
+        </div>
+    </div>
+</div>
+

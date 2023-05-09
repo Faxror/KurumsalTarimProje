@@ -1,0 +1,24 @@
+﻿@using EntityLayer.Concrete
+@model List<Image>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Titles</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.ImageID</td>
+    <td>@item.Title</td>
+    <td>@item.Title</td>
+    <td><a href="/Image/DeleteImage/@item.ImageID" class="btn btn-outline-danger">Sil</a> <a href="/Image/AddUpdate/@item.ImageID" class="btn btn-outline-success">Düzenle</a></td>
+</tr>
+    }
+</table>
+<a href="/Image/AddImage/" class="btn btn-outline-info">Yeni Resim Ekle</a>
