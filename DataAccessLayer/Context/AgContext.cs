@@ -17,6 +17,7 @@ namespace DataAccessLayer.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Adress>().HasNoKey();
+            modelBuilder.Entity<SocialMedia>().HasNoKey();
         }
         public DbSet<Adress> Adresses { get; set; }
         public DbSet<Annoncement> Annoncements { get; set; }
@@ -24,5 +25,7 @@ namespace DataAccessLayer.Context
         public DbSet<Image> Images { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<Team> Teams { get; set; }
+        public DbSet<SocialMedia> SocialMedias { get; set; }
+        public DbSet<About> Abouts { get; set; }
     }
 }

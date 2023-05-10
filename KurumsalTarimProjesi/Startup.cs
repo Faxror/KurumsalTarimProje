@@ -48,6 +48,14 @@ namespace KurumsalTarimProjesi
             services.AddScoped<IContactService, ContactManager>();
             services.AddScoped<IContactDal, EFContactDal>();
 
+            //TopAdress Error Fix
+            services.AddScoped<ISocialMediaService, SocialMediaManager>();
+            services.AddScoped<ISocialMediaDal, EFSocialMediaDal>();
+
+            //About Error Fix
+            services.AddScoped<IAboutService, AboutManager>();
+            services.AddScoped<IAboutDal, EFAboutDal>();
+
             services.AddDbContext<AgContext>();
             services.AddControllersWithViews();
         }
