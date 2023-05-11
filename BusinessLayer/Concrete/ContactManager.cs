@@ -35,7 +35,7 @@ namespace BusinessLayer.Concrete
 
         public void Insert(Contact t)
         {
-            throw new NotImplementedException();
+            _ContactDal.Insert(t);
         }
 
         public void Update(Contact t)

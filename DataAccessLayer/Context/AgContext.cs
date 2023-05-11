@@ -12,7 +12,7 @@ namespace DataAccessLayer.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-I45D279;database=DbTarim; Integrated security=true");
+            optionsBuilder.UseSqlServer("server=Eriza-Studio;database=DbTarim; Integrated security=true");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
