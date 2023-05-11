@@ -60,6 +60,10 @@ namespace KurumsalTarimProjesi
             services.AddScoped<ITeamService, TeamManager>();
             services.AddScoped<ITeamDal, EFTeamDal>();
 
+            //Admin Error Fix
+            services.AddScoped<IAdminService, AdminManager>();
+            services.AddScoped<IAdminDal, EFAdminDal>();
+
             services.AddDbContext<AgContext>();
             services.AddControllersWithViews();
         }
