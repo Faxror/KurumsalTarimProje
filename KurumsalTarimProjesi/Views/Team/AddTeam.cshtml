@@ -1,0 +1,42 @@
+﻿@model EntityLayer.Concrete.Team
+@{
+    ViewData["Title"] = "AddTeam";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Takım Arkadaşı Ekleme</h4>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label for="exampleInputName1">Ad Soyad</label>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Lütfen Başlık Giriniz" asp-for="PersonName">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Görevi</label>
+                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Lütfen Görsel Url Giriniz" asp-for="Title">
+                </div>
+                <div class="form-group">
+                    <label for="exampleTextarea1">İnstagram Url</label>
+                    <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Lütfen Açıklama Giriniz" asp-for="İnstagramUrl"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleTextarea1">Twitter Url</label>
+                    <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Lütfen Açıklama Giriniz" asp-for="TwitterUrl"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleTextarea1">Facebook Url</label>
+                    <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Lütfen Açıklama Giriniz" asp-for="FacebookUrl"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleTextarea1">Website Url</label>
+                    <textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Lütfen Açıklama Giriniz" asp-for="WebsiteUrl"></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-primary">Kaydet</button>
+                <button class="btn btn-light">Geri Dön</button>
+            </form>
+        </div>
+    </div>
+</div>
+

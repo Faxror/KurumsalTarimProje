@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Context
 {
-    public class AgContext : DbContext
+    public class AgContext : DbContext  
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
