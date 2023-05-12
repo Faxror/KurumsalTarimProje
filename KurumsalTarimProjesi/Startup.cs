@@ -3,9 +3,12 @@ using BusinessLayer.Concrete;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete.EntityFramework;
 using DataAccessLayer.Context;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -63,6 +66,29 @@ namespace KurumsalTarimProjesi
             //Admin Error Fix
             services.AddScoped<IAdminService, AdminManager>();
             services.AddScoped<IAdminDal, EFAdminDal>();
+
+
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AgContext>();
+
+            services.AddControllersWithViews();
+
+
+            services.AddMvc(config =>
+            {
+
+                var policy = new AuthorizationPolicyBuilder()
+                .RequireAuthenticatedUser()
+                .Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+            });
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Login/Index";
+            });
+
+
+
 
             services.AddDbContext<AgContext>();
             services.AddControllersWithViews();

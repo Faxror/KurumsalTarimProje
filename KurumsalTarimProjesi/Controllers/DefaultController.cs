@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstrack;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace KurumsalTarimProjesi.Controllers
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         private readonly IContactService _contactService;

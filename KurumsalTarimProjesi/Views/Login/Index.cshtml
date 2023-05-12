@@ -1,4 +1,4 @@
-﻿
+﻿@model KurumsalTarimProjesi.Models.UserLoginViewModel
 @{
     Layout = null;
 }
@@ -31,10 +31,10 @@
                     <h6>Lütfen Aşağıdaki Bilgileri Doldurunuz</h6>
                     <form action="#" method="post" class="signin-form">
                         <div class="form-input">
-                            <input type="text" name="Username" placeholder="Kullanıcı Adı" required="" autofocus>
+                            <input type="text" asp-for="Username" placeholder="Kullanıcı Adı" required="" autofocus>
                         </div>
                         <div class="form-input">
-                            <input type="password" name="password" placeholder="Şifre" required="">
+                            <input type="password" asp-for="Password" placeholder="Şifre" required="">
                         </div>
                         <label class="check-remaind">
                             <input type="checkbox">

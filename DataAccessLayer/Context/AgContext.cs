@@ -1,4 +1,6 @@
 ﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Context
 {
-    public class AgContext : DbContext  
+    public class AgContext : IdentityDbContext  
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -18,6 +20,11 @@ namespace DataAccessLayer.Context
         {
             modelBuilder.Entity<Adress>().HasNoKey();
             modelBuilder.Entity<SocialMedia>().HasNoKey();
+            modelBuilder.Entity<IdentityUserLogin< string>>().HasNoKey();
+            modelBuilder.Entity<IdentityUserRole< string>>().HasNoKey();
+            modelBuilder.Entity<IdentityUserToken< string>>().HasNoKey();
+
+
         }
         public DbSet<Adress> Adresses { get; set; }
         public DbSet<Annoncement> Annoncements { get; set; }
