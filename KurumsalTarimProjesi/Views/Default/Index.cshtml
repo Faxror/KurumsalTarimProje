@@ -34,10 +34,10 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4>In Harvest</h4>
-                    <img src="images/banner1.jpg" alt=" " class="img-responsive">
-                    <h5>ENVIRONMENT & SUSTAINABILITY</h5>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
+                    <h4>Tarım LTD</h4>
+                    <img src="~/web/images/banner1.jpg" alt=" " class="img-responsive">
+                    <h5>GÜVENLİK & GÜVENİRLİK</h5>
+                    <p>Tarlamız son derecede güvenli olup, guvenilen insanlar tarafından ekilip biçilmektedir.</p>
                 </div>
             </div>
         </div>
@@ -55,7 +55,6 @@
     @await Component.InvokeAsync("_TeamPartial")
     <!-- //team -->
     <!--blog -->
-    @await Component.InvokeAsync("_NewsPartial")
     <!-- //blog -->
     <!-- Modal2 -->
     <!-- //Modal2 -->
@@ -74,6 +73,7 @@
         </div>
     </div>
     @await Component.InvokeAsync("_MapPartial")
+    <link rel="shortcut icon" href="~/web/favicon.ico">
 
     <div class="copy">
         <p>© @DateTime.Now.Year TarımLTD - Tüm Hakları Saklıdır.</p>
