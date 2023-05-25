@@ -37,17 +37,15 @@ namespace KurumsalTarimProjesi.Controllers
             ValidationResult result = validationrules.Validate(p);
             if (result.IsValid)
             {
-                _ımageDal.Insert(p);
-                return RedirectToAction("Index");
-            } else
-            {
-                 foreach (var item  in result.Errors)
+                foreach (var item in result.Errors)
                 {
                     ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
                 }
+
             }
-            return View();
-          
+            _ımageDal.Insert(p);
+            return RedirectToAction("Index");
+
         }
         [HttpGet]
         public IActionResult AddUpdate(int id)

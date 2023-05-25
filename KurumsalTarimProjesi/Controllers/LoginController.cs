@@ -48,5 +48,6 @@ namespace KurumsalTarimProjesi.Controllers
             return RedirectToAction("Index", "Login");
 
         }
+
     }
 }
